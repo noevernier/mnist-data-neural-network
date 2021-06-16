@@ -66,15 +66,3 @@ class NeuralNetwork:
         
         
 
-nn = NeuralNetwork(2,10,1)
-for x in range(100):
-   for y in range(100):
-      nn.train([[x/100],[y/100]], [[sqrt((x/100-0.5)*(x/100-0.5) + (y/100-0.5)*(y/100-0.5))]])
-
-im = np.zeros((100,100))
-for x in range(100):
-   for y in range(100):
-      im[x][y] = nn.predict([[x/100], [y/100]])[0][0]
-      print(nn.predict([[x/100], [y/100]]))
-plt.imshow(im)
-plt.show()
